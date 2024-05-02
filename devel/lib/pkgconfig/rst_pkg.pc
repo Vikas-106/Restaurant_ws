@@ -1,0 +1,8 @@
+prefix=/home/vikas/Restaurant_ws/devel
+
+Name: rst_pkg
+Description: Description of rst_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
