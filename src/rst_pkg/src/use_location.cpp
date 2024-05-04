@@ -134,7 +134,7 @@ void callback(const std_msgs::String::ConstPtr &msg)
   }
   else
   {
-    std::cout<<"Crossed 10 seconds !!!"<<std::endl;
+    std::cout<<"Crossed 10 seconds !!! , Try Again "<<std::endl;
     move_to_location(coordinates);
     begin = ros::Time::now();
   }
