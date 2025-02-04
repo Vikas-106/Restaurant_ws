@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   move_base
   actionlib
+  tf
 )
 
 ## Generate messages in the 'msg' folder
@@ -71,6 +72,21 @@ include_directories(
 
  add_executable(test_code src/test_code.cpp)
  target_link_libraries(test_code ${catkin_LIBRARIES})
+
+ add_executable(odom src/odomentry.cpp)
+ target_link_libraries(odom ${catkin_LIBRARIES})
+
+ add_executable(odom2 src/odom.cpp)
+ target_link_libraries(odom2 ${catkin_LIBRARIES})
+
+ add_executable(imu src/imu.cpp)
+ target_link_libraries(imu ${catkin_LIBRARIES})
+
+ add_executable(test_move src/test_move.cpp)
+ target_link_libraries(test_move ${catkin_LIBRARIES})
+
+#  add_executable(imu src/imu.cpp)
+#  target_link_libraries(imu ${catkin_LIBRARIES})
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

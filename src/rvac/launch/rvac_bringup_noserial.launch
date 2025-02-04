@@ -1,0 +1,12 @@
+<launch>
+  <!-- Argument to specify the path to the URDF file -->
+  <arg name="urdf_file" default="$(find rvac)/urdf/rvac.urdf"/>
+
+  <!-- Load URDF into the parameter 'robot_description' -->
+  <param name="robot_description" command="cat $(arg urdf_file)" />
+
+  <!-- Launch the robot_state_publisher to publish the URDF transforms -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  
+</launch>

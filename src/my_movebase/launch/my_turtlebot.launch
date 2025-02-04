@@ -1,0 +1,29 @@
+<launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
+
+  <arg name="map_file" default="$(find my_movebase)corri2.yaml"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_movebase)/auto_nav.rviz" required="true" />   
+    <!-- <include file="$(find rvac )/launch/amcl.launch"/>  -->
+  <include file="$(find turtlebot3_navigation )/launch/amcl.launch"/> 
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find my_movebase)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find my_movebase)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find my_movebase)/param/local_costmap_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find my_movebase)/param/global_costmap_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find my_movebase)/param/move_base_params.yaml" command="load" ns="global_costmap" />
+    <!-- <rosparam file="$(find my_movebase)/param/base_local_planner_params.yaml" command="load" /> -->
+    <rosparam file="$(find my_movebase)/param/dwa_local_planner_params.yaml" command="load" />
+<!-- 
+  		<param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+
+		<param name="controller_frequency" value="5.0" />
+		<param name="controller_patience" value="15.0" /> 
+
+      		<param name="clearing_rotation_allowed" value="true" />  -->
+  </node>
+
+</launch>

@@ -80,18 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -135,6 +123,18 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/vikas/Restaurant_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/vikas/Restaurant_ws/build/CMakeFiles /home/vikas/Restaurant_ws/build/rst_pkg/CMakeFiles/progress.marks
@@ -168,96 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-rst_pkg/CMakeFiles/move_base_gencfg.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/move_base_gencfg.dir/rule
-.PHONY : rst_pkg/CMakeFiles/move_base_gencfg.dir/rule
-
-# Convenience name for target.
-move_base_gencfg: rst_pkg/CMakeFiles/move_base_gencfg.dir/rule
-
-.PHONY : move_base_gencfg
-
-# fast build rule for target.
-move_base_gencfg/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/move_base_gencfg.dir/build.make rst_pkg/CMakeFiles/move_base_gencfg.dir/build
-.PHONY : move_base_gencfg/fast
-
-# Convenience name for target.
-rst_pkg/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
-.PHONY : rst_pkg/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-move_base_msgs_generate_messages_py: rst_pkg/CMakeFiles/move_base_msgs_generate_messages_py.dir/rule
-
-.PHONY : move_base_msgs_generate_messages_py
-
-# fast build rule for target.
-move_base_msgs_generate_messages_py/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make rst_pkg/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
-.PHONY : move_base_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-rst_pkg/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
-.PHONY : rst_pkg/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-move_base_msgs_generate_messages_cpp: rst_pkg/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : move_base_msgs_generate_messages_cpp
-
-# fast build rule for target.
-move_base_msgs_generate_messages_cpp/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make rst_pkg/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
-.PHONY : move_base_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-rst_pkg/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
-.PHONY : rst_pkg/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-move_base_msgs_generate_messages_eus: rst_pkg/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
-
-.PHONY : move_base_msgs_generate_messages_eus
-
-# fast build rule for target.
-move_base_msgs_generate_messages_eus/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build.make rst_pkg/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build
-.PHONY : move_base_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-rst_pkg/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule
-.PHONY : rst_pkg/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-move_base_msgs_generate_messages_nodejs: rst_pkg/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : move_base_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-move_base_msgs_generate_messages_nodejs/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build.make rst_pkg/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build
-.PHONY : move_base_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-rst_pkg/CMakeFiles/use_location.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/use_location.dir/rule
-.PHONY : rst_pkg/CMakeFiles/use_location.dir/rule
-
-# Convenience name for target.
-use_location: rst_pkg/CMakeFiles/use_location.dir/rule
-
-.PHONY : use_location
-
-# fast build rule for target.
-use_location/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/use_location.dir/build.make rst_pkg/CMakeFiles/use_location.dir/build
-.PHONY : use_location/fast
-
-# Convenience name for target.
 rst_pkg/CMakeFiles/get_location.dir/rule:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/get_location.dir/rule
 .PHONY : rst_pkg/CMakeFiles/get_location.dir/rule
@@ -288,19 +198,79 @@ test_code/fast:
 .PHONY : test_code/fast
 
 # Convenience name for target.
-rst_pkg/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
-.PHONY : rst_pkg/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
+rst_pkg/CMakeFiles/use_location.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/use_location.dir/rule
+.PHONY : rst_pkg/CMakeFiles/use_location.dir/rule
 
 # Convenience name for target.
-move_base_msgs_generate_messages_lisp: rst_pkg/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/rule
+use_location: rst_pkg/CMakeFiles/use_location.dir/rule
 
-.PHONY : move_base_msgs_generate_messages_lisp
+.PHONY : use_location
 
 # fast build rule for target.
-move_base_msgs_generate_messages_lisp/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make rst_pkg/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
-.PHONY : move_base_msgs_generate_messages_lisp/fast
+use_location/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/use_location.dir/build.make rst_pkg/CMakeFiles/use_location.dir/build
+.PHONY : use_location/fast
+
+# Convenience name for target.
+rst_pkg/CMakeFiles/odom.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/odom.dir/rule
+.PHONY : rst_pkg/CMakeFiles/odom.dir/rule
+
+# Convenience name for target.
+odom: rst_pkg/CMakeFiles/odom.dir/rule
+
+.PHONY : odom
+
+# fast build rule for target.
+odom/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom.dir/build.make rst_pkg/CMakeFiles/odom.dir/build
+.PHONY : odom/fast
+
+# Convenience name for target.
+rst_pkg/CMakeFiles/imu.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/imu.dir/rule
+.PHONY : rst_pkg/CMakeFiles/imu.dir/rule
+
+# Convenience name for target.
+imu: rst_pkg/CMakeFiles/imu.dir/rule
+
+.PHONY : imu
+
+# fast build rule for target.
+imu/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/imu.dir/build.make rst_pkg/CMakeFiles/imu.dir/build
+.PHONY : imu/fast
+
+# Convenience name for target.
+rst_pkg/CMakeFiles/test_move.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/test_move.dir/rule
+.PHONY : rst_pkg/CMakeFiles/test_move.dir/rule
+
+# Convenience name for target.
+test_move: rst_pkg/CMakeFiles/test_move.dir/rule
+
+.PHONY : test_move
+
+# fast build rule for target.
+test_move/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_move.dir/build.make rst_pkg/CMakeFiles/test_move.dir/build
+.PHONY : test_move/fast
+
+# Convenience name for target.
+rst_pkg/CMakeFiles/odom2.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/odom2.dir/rule
+.PHONY : rst_pkg/CMakeFiles/odom2.dir/rule
+
+# Convenience name for target.
+odom2: rst_pkg/CMakeFiles/odom2.dir/rule
+
+.PHONY : odom2
+
+# fast build rule for target.
+odom2/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/build
+.PHONY : odom2/fast
 
 src/get_location.o: src/get_location.cpp.o
 
@@ -329,6 +299,87 @@ src/get_location.cpp.s:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/get_location.dir/build.make rst_pkg/CMakeFiles/get_location.dir/src/get_location.cpp.s
 .PHONY : src/get_location.cpp.s
 
+src/imu.o: src/imu.cpp.o
+
+.PHONY : src/imu.o
+
+# target to build an object file
+src/imu.cpp.o:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/imu.dir/build.make rst_pkg/CMakeFiles/imu.dir/src/imu.cpp.o
+.PHONY : src/imu.cpp.o
+
+src/imu.i: src/imu.cpp.i
+
+.PHONY : src/imu.i
+
+# target to preprocess a source file
+src/imu.cpp.i:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/imu.dir/build.make rst_pkg/CMakeFiles/imu.dir/src/imu.cpp.i
+.PHONY : src/imu.cpp.i
+
+src/imu.s: src/imu.cpp.s
+
+.PHONY : src/imu.s
+
+# target to generate assembly for a file
+src/imu.cpp.s:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/imu.dir/build.make rst_pkg/CMakeFiles/imu.dir/src/imu.cpp.s
+.PHONY : src/imu.cpp.s
+
+src/odom.o: src/odom.cpp.o
+
+.PHONY : src/odom.o
+
+# target to build an object file
+src/odom.cpp.o:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/src/odom.cpp.o
+.PHONY : src/odom.cpp.o
+
+src/odom.i: src/odom.cpp.i
+
+.PHONY : src/odom.i
+
+# target to preprocess a source file
+src/odom.cpp.i:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/src/odom.cpp.i
+.PHONY : src/odom.cpp.i
+
+src/odom.s: src/odom.cpp.s
+
+.PHONY : src/odom.s
+
+# target to generate assembly for a file
+src/odom.cpp.s:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/src/odom.cpp.s
+.PHONY : src/odom.cpp.s
+
+src/odomentry.o: src/odomentry.cpp.o
+
+.PHONY : src/odomentry.o
+
+# target to build an object file
+src/odomentry.cpp.o:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom.dir/build.make rst_pkg/CMakeFiles/odom.dir/src/odomentry.cpp.o
+.PHONY : src/odomentry.cpp.o
+
+src/odomentry.i: src/odomentry.cpp.i
+
+.PHONY : src/odomentry.i
+
+# target to preprocess a source file
+src/odomentry.cpp.i:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom.dir/build.make rst_pkg/CMakeFiles/odom.dir/src/odomentry.cpp.i
+.PHONY : src/odomentry.cpp.i
+
+src/odomentry.s: src/odomentry.cpp.s
+
+.PHONY : src/odomentry.s
+
+# target to generate assembly for a file
+src/odomentry.cpp.s:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom.dir/build.make rst_pkg/CMakeFiles/odom.dir/src/odomentry.cpp.s
+.PHONY : src/odomentry.cpp.s
+
 src/test_code.o: src/test_code.cpp.o
 
 .PHONY : src/test_code.o
@@ -355,6 +406,33 @@ src/test_code.s: src/test_code.cpp.s
 src/test_code.cpp.s:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_code.dir/build.make rst_pkg/CMakeFiles/test_code.dir/src/test_code.cpp.s
 .PHONY : src/test_code.cpp.s
+
+src/test_move.o: src/test_move.cpp.o
+
+.PHONY : src/test_move.o
+
+# target to build an object file
+src/test_move.cpp.o:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_move.dir/build.make rst_pkg/CMakeFiles/test_move.dir/src/test_move.cpp.o
+.PHONY : src/test_move.cpp.o
+
+src/test_move.i: src/test_move.cpp.i
+
+.PHONY : src/test_move.i
+
+# target to preprocess a source file
+src/test_move.cpp.i:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_move.dir/build.make rst_pkg/CMakeFiles/test_move.dir/src/test_move.cpp.i
+.PHONY : src/test_move.cpp.i
+
+src/test_move.s: src/test_move.cpp.s
+
+.PHONY : src/test_move.s
+
+# target to generate assembly for a file
+src/test_move.cpp.s:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_move.dir/build.make rst_pkg/CMakeFiles/test_move.dir/src/test_move.cpp.s
+.PHONY : src/test_move.cpp.s
 
 src/use_location.o: src/use_location.cpp.o
 
@@ -389,28 +467,38 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... move_base_gencfg"
-	@echo "... move_base_msgs_generate_messages_py"
-	@echo "... move_base_msgs_generate_messages_cpp"
-	@echo "... move_base_msgs_generate_messages_eus"
-	@echo "... move_base_msgs_generate_messages_nodejs"
-	@echo "... use_location"
 	@echo "... get_location"
 	@echo "... test_code"
-	@echo "... move_base_msgs_generate_messages_lisp"
+	@echo "... use_location"
+	@echo "... odom"
+	@echo "... install/strip"
+	@echo "... imu"
+	@echo "... test_move"
+	@echo "... install/local"
 	@echo "... test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... odom2"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... src/get_location.o"
 	@echo "... src/get_location.i"
 	@echo "... src/get_location.s"
+	@echo "... src/imu.o"
+	@echo "... src/imu.i"
+	@echo "... src/imu.s"
+	@echo "... src/odom.o"
+	@echo "... src/odom.i"
+	@echo "... src/odom.s"
+	@echo "... src/odomentry.o"
+	@echo "... src/odomentry.i"
+	@echo "... src/odomentry.s"
 	@echo "... src/test_code.o"
 	@echo "... src/test_code.i"
 	@echo "... src/test_code.s"
+	@echo "... src/test_move.o"
+	@echo "... src/test_move.i"
+	@echo "... src/test_move.s"
 	@echo "... src/use_location.o"
 	@echo "... src/use_location.i"
 	@echo "... src/use_location.s"

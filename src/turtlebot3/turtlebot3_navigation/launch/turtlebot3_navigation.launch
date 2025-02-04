@@ -1,7 +1,7 @@
 <launch>
   <!-- Arguments -->
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
-  <arg name="map_file" default="$(find turtlebot3_navigation)/maps/Restaurant_map.yaml"/>
+  <arg name="map_fil" default="/home/vikas/Restaurant_ws/src/turtlebot3/turtlebot3_navigation/maps/Restaurant_map.yaml"/>
   <arg name="open_rviz" default="true"/>
   <arg name="move_forward_only" default="false"/>
 
@@ -11,16 +11,20 @@
   </include>
 
   <!-- Map server -->
-  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_fil)"/>
 
   <!-- AMCL -->
-  <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
+  <include file="$(find turtlebot3_navigation )/launch/amcl.launch"/> 
+  <!-- <include file="$(find rvac )/launch/amcl.launch"/>  -->
 
-  <!-- move_base -->
-  <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+  <!-- move_base   turtlebot3_navigation -->  
+  <!-- <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
     <arg name="model" value="$(arg model)" />
     <arg name="move_forward_only" value="$(arg move_forward_only)"/>
-  </include>
+  </include>  -->
+
+  <include file="$(find rvac)/launch/move_base.launch"/>
+
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 

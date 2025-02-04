@@ -1,0 +1,8 @@
+prefix=/home/vikas/Restaurant_ws/devel
+
+Name: rvac
+Description: Description of rvac
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

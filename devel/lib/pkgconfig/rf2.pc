@@ -1,0 +1,8 @@
+prefix=/home/vikas/Restaurant_ws/devel
+
+Name: rf2
+Description: Description of rf2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
