@@ -1,0 +1,9 @@
+-I/home/vikas/Restaurant_ws/src/witmotion_IMU_ros/witmotion_IMU_QT/include
+-I/home/vikas/Restaurant_ws/build/witmotion_IMU_ros/witmotion_IMU_QT
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="witmotion_ros"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/home/vikas/Restaurant_ws/build/witmotion_IMU_ros/witmotion_IMU_QT/include/witmotion/moc_wt901-uart.cpp
+/home/vikas/Restaurant_ws/src/witmotion_IMU_ros/witmotion_IMU_QT/include/witmotion/wt901-uart.h

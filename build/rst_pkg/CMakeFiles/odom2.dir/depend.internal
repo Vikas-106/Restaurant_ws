@@ -74,7 +74,11 @@ rst_pkg/CMakeFiles/odom2.dir/src/odom.cpp.o
  /opt/ros/noetic/include/ros/wall_timer.h
  /opt/ros/noetic/include/ros/wall_timer_options.h
  /opt/ros/noetic/include/rosconsole/macros_generated.h
+ /opt/ros/noetic/include/sensor_msgs/Imu.h
+ /opt/ros/noetic/include/std_msgs/Float32MultiArray.h
  /opt/ros/noetic/include/std_msgs/Header.h
+ /opt/ros/noetic/include/std_msgs/MultiArrayDimension.h
+ /opt/ros/noetic/include/std_msgs/MultiArrayLayout.h
  /opt/ros/noetic/include/tf/LinearMath/Matrix3x3.h
  /opt/ros/noetic/include/tf/LinearMath/MinMax.h
  /opt/ros/noetic/include/tf/LinearMath/QuadWord.h

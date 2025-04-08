@@ -64,7 +64,7 @@ int main(int argc, char** argv)
 
         // Prepare the transform (odom -> base_link)
         geometry_msgs::TransformStamped odom_trans;
-        odom_trans.header.stamp = current_time;
+        odom_trans.header.stamp = ros::Time::now();
         odom_trans.header.frame_id = "odom";
         odom_trans.child_frame_id = "base_link";
 
@@ -78,7 +78,7 @@ int main(int argc, char** argv)
 
         // Publish the odometry message
         nav_msgs::Odometry odom;
-        odom.header.stamp = current_time;
+        odom.header.stamp = ros::Time::now();
         odom.header.frame_id = "odom";
 
         // Set position and orientation

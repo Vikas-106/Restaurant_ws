@@ -1,11 +1,14 @@
 <launch>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser" args="0 0 0 0 0 0 base_link base_laser 100" /> -->
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_filter_node" output="screen">
     <rosparam command="load" file="$(find rst_pkg)/param/ekf.yaml" />
     <param name="use_sim_time" value="false" />
     <remap from="/odometry/filtered" to="odom"/>
-    
+    <param name="allow_trajectory_out_of_order" value="true" />
+
+
   </node>
-  <node pkg="nodelet" type="nodelet" name="imu_manager"
+  <!-- <node pkg="nodelet" type="nodelet" name="imu_manager"
     args="manager" output="screen" />
 
   #### IMU Driver ###########################################################
@@ -16,7 +19,8 @@
 
     <param name="publish_tf" value="false"/>
 
-  </node>
+  </node> -->
+  
+  <!-- <node pkg = "rst_pkg" type="test_code" name= "test_code" output="screen" />  -->
   <node pkg = "rst_pkg" type="odom" name= "odomentry" output="screen" /> 
-  <node pkg = "rst_pkg" type="test_code" name= "test_code" output="screen" /> 
 </launch>

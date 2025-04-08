@@ -6,38 +6,17 @@
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_datatypes.h> // for tf::createQuaternionMsgFromYaw
 #include <geometry_msgs/Twist.h>
-
+#include <sensor_msgs/Imu.h>
 
 float x, y, theta , theta2;
 float ax,ay,az,wz;
 float v, w;
 const float L = 0.15;  // Wheelbase of the robot (distance between left and right wheels)
 
-void callback(const std_msgs::Float32MultiArray::ConstPtr &msg)
+void callback(const sensor_msgs::Imu::ConstPtr &msg)
 {
-       ax = msg->data[0];
-       ay = msg->data[1];
-       az = msg->data[2];
-       if(msg->data[5]>400)
-       {
-        if(500-msg->data[5]<=0)
-        {
-            wz = 0;
-        }
-        else
-        {
-            wz = -(500-msg->data[5])/5 ;
-        }
-       }
-       else
-       {
-        wz = msg->data[5]/5;
-       }
-       if(wz>= -0.5 && wz <= 0.5)
-       {
-        wz = 0;
-       }
-       std::cout<<wz<<std::endl;
+   
+    wz = msg->angular_velocity.z;
 
 }
 
@@ -51,7 +30,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "imuPublisher");
     ros::NodeHandle n;
-    ros::Subscriber sub = n.subscribe<std_msgs::Float32MultiArray>("imuraw", 10, callback);
+    ros::Subscriber sub = n.subscribe<sensor_msgs::Imu>("wit/imu", 10, callback);
     ros::Subscriber sub2 = n.subscribe<geometry_msgs::Twist>("cmd_vel", 10, callback2);
     ros::Publisher pub = n.advertise<nav_msgs::Odometry>("/imuodom", 5);
 

@@ -29,7 +29,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "imuPublisher");
     ros::NodeHandle n;
     ros::Subscriber sub = n.subscribe<std_msgs::Float32MultiArray>("imuraw", 10, callback);
-    ros::Publisher pub = n.advertise<sensor_msgs::Imu>("/imu/data_raw", 5);
+    ros::Publisher pub = n.advertise<sensor_msgs::Imu>("/imu/data_raw", 10);
 
      ros::Rate rate(10); // 10 Hz loop rate
      while (ros::ok())
