@@ -56,6 +56,28 @@ CMAKE_BINARY_DIR = /home/vikas/Restaurant_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -91,17 +113,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -113,27 +124,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,21 +183,6 @@ get_location/fast:
 .PHONY : get_location/fast
 
 # Convenience name for target.
-rst_pkg/CMakeFiles/test_code.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/test_code.dir/rule
-.PHONY : rst_pkg/CMakeFiles/test_code.dir/rule
-
-# Convenience name for target.
-test_code: rst_pkg/CMakeFiles/test_code.dir/rule
-
-.PHONY : test_code
-
-# fast build rule for target.
-test_code/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_code.dir/build.make rst_pkg/CMakeFiles/test_code.dir/build
-.PHONY : test_code/fast
-
-# Convenience name for target.
 rst_pkg/CMakeFiles/use_location.dir/rule:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/use_location.dir/rule
 .PHONY : rst_pkg/CMakeFiles/use_location.dir/rule
@@ -228,6 +213,36 @@ odom/fast:
 .PHONY : odom/fast
 
 # Convenience name for target.
+rst_pkg/CMakeFiles/goals.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/goals.dir/rule
+.PHONY : rst_pkg/CMakeFiles/goals.dir/rule
+
+# Convenience name for target.
+goals: rst_pkg/CMakeFiles/goals.dir/rule
+
+.PHONY : goals
+
+# fast build rule for target.
+goals/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/goals.dir/build.make rst_pkg/CMakeFiles/goals.dir/build
+.PHONY : goals/fast
+
+# Convenience name for target.
+rst_pkg/CMakeFiles/odom2.dir/rule:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/odom2.dir/rule
+.PHONY : rst_pkg/CMakeFiles/odom2.dir/rule
+
+# Convenience name for target.
+odom2: rst_pkg/CMakeFiles/odom2.dir/rule
+
+.PHONY : odom2
+
+# fast build rule for target.
+odom2/fast:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/build
+.PHONY : odom2/fast
+
+# Convenience name for target.
 rst_pkg/CMakeFiles/imu.dir/rule:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/imu.dir/rule
 .PHONY : rst_pkg/CMakeFiles/imu.dir/rule
@@ -256,21 +271,6 @@ test_move: rst_pkg/CMakeFiles/test_move.dir/rule
 test_move/fast:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_move.dir/build.make rst_pkg/CMakeFiles/test_move.dir/build
 .PHONY : test_move/fast
-
-# Convenience name for target.
-rst_pkg/CMakeFiles/odom2.dir/rule:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rst_pkg/CMakeFiles/odom2.dir/rule
-.PHONY : rst_pkg/CMakeFiles/odom2.dir/rule
-
-# Convenience name for target.
-odom2: rst_pkg/CMakeFiles/odom2.dir/rule
-
-.PHONY : odom2
-
-# fast build rule for target.
-odom2/fast:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/build
-.PHONY : odom2/fast
 
 src/get_location.o: src/get_location.cpp.o
 
@@ -326,6 +326,33 @@ src/imu.cpp.s:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/imu.dir/build.make rst_pkg/CMakeFiles/imu.dir/src/imu.cpp.s
 .PHONY : src/imu.cpp.s
 
+src/mark_goals.o: src/mark_goals.cpp.o
+
+.PHONY : src/mark_goals.o
+
+# target to build an object file
+src/mark_goals.cpp.o:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/goals.dir/build.make rst_pkg/CMakeFiles/goals.dir/src/mark_goals.cpp.o
+.PHONY : src/mark_goals.cpp.o
+
+src/mark_goals.i: src/mark_goals.cpp.i
+
+.PHONY : src/mark_goals.i
+
+# target to preprocess a source file
+src/mark_goals.cpp.i:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/goals.dir/build.make rst_pkg/CMakeFiles/goals.dir/src/mark_goals.cpp.i
+.PHONY : src/mark_goals.cpp.i
+
+src/mark_goals.s: src/mark_goals.cpp.s
+
+.PHONY : src/mark_goals.s
+
+# target to generate assembly for a file
+src/mark_goals.cpp.s:
+	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/goals.dir/build.make rst_pkg/CMakeFiles/goals.dir/src/mark_goals.cpp.s
+.PHONY : src/mark_goals.cpp.s
+
 src/odom.o: src/odom.cpp.o
 
 .PHONY : src/odom.o
@@ -379,33 +406,6 @@ src/odomentry.s: src/odomentry.cpp.s
 src/odomentry.cpp.s:
 	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/odom.dir/build.make rst_pkg/CMakeFiles/odom.dir/src/odomentry.cpp.s
 .PHONY : src/odomentry.cpp.s
-
-src/test_code.o: src/test_code.cpp.o
-
-.PHONY : src/test_code.o
-
-# target to build an object file
-src/test_code.cpp.o:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_code.dir/build.make rst_pkg/CMakeFiles/test_code.dir/src/test_code.cpp.o
-.PHONY : src/test_code.cpp.o
-
-src/test_code.i: src/test_code.cpp.i
-
-.PHONY : src/test_code.i
-
-# target to preprocess a source file
-src/test_code.cpp.i:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_code.dir/build.make rst_pkg/CMakeFiles/test_code.dir/src/test_code.cpp.i
-.PHONY : src/test_code.cpp.i
-
-src/test_code.s: src/test_code.cpp.s
-
-.PHONY : src/test_code.s
-
-# target to generate assembly for a file
-src/test_code.cpp.s:
-	cd /home/vikas/Restaurant_ws/build && $(MAKE) -f rst_pkg/CMakeFiles/test_code.dir/build.make rst_pkg/CMakeFiles/test_code.dir/src/test_code.cpp.s
-.PHONY : src/test_code.cpp.s
 
 src/test_move.o: src/test_move.cpp.o
 
@@ -468,34 +468,34 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... get_location"
-	@echo "... test_code"
 	@echo "... use_location"
+	@echo "... install"
 	@echo "... odom"
+	@echo "... goals"
+	@echo "... list_install_components"
+	@echo "... odom2"
 	@echo "... install/strip"
 	@echo "... imu"
 	@echo "... test_move"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... odom2"
-	@echo "... list_install_components"
-	@echo "... install"
+	@echo "... edit_cache"
 	@echo "... src/get_location.o"
 	@echo "... src/get_location.i"
 	@echo "... src/get_location.s"
 	@echo "... src/imu.o"
 	@echo "... src/imu.i"
 	@echo "... src/imu.s"
+	@echo "... src/mark_goals.o"
+	@echo "... src/mark_goals.i"
+	@echo "... src/mark_goals.s"
 	@echo "... src/odom.o"
 	@echo "... src/odom.i"
 	@echo "... src/odom.s"
 	@echo "... src/odomentry.o"
 	@echo "... src/odomentry.i"
 	@echo "... src/odomentry.s"
-	@echo "... src/test_code.o"
-	@echo "... src/test_code.i"
-	@echo "... src/test_code.s"
 	@echo "... src/test_move.o"
 	@echo "... src/test_move.i"
 	@echo "... src/test_move.s"

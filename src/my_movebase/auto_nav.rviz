@@ -234,6 +234,14 @@ Visualization Manager:
       Topic: /particlecloud
       Unreliable: false
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        highlighted_cells: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -262,7 +270,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.643794059753418
+      Distance: 8.189010620117188
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -270,17 +278,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.13261838257312775
-        Y: 1.8084832429885864
-        Z: -0.18351033329963684
+        X: 0.08233937621116638
+        Y: 0.6481350064277649
+        Z: -0.18406222760677338
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.5147963762283325
       Target Frame: <Fixed Frame>
-      Yaw: 6.201770305633545
+      Yaw: 3.1067655086517334
     Saved: ~
 Window Geometry:
   Displays:

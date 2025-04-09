@@ -10,12 +10,12 @@ DWAPlannerROS:
   min_vel_trans: 0.05
   
   # IMPORTANT: Significantly increased rotation speed
-  max_vel_theta: 1.0  # Increased to allow proper turning
+  max_vel_theta: 1.90  # Increased to allow proper turning
   min_vel_theta: 0.4  # Increased to ensure rotation works
   
   acc_lim_x: 0.5
   acc_lim_y: 0.0
-  acc_lim_theta: 1.0  # Increased rotation acceleration
+  acc_lim_theta: 1.90  # Increased rotation acceleration
   
   # Goal Tolerance Parameters
   xy_goal_tolerance: 0.2

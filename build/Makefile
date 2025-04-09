@@ -3210,19 +3210,6 @@ get_location/fast:
 .PHONY : get_location/fast
 
 #=============================================================================
-# Target rules for targets named test_code
-
-# Build rule for target.
-test_code: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_code
-.PHONY : test_code
-
-# fast build rule for target.
-test_code/fast:
-	$(MAKE) -f rst_pkg/CMakeFiles/test_code.dir/build.make rst_pkg/CMakeFiles/test_code.dir/build
-.PHONY : test_code/fast
-
-#=============================================================================
 # Target rules for targets named use_location
 
 # Build rule for target.
@@ -3249,6 +3236,32 @@ odom/fast:
 .PHONY : odom/fast
 
 #=============================================================================
+# Target rules for targets named goals
+
+# Build rule for target.
+goals: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 goals
+.PHONY : goals
+
+# fast build rule for target.
+goals/fast:
+	$(MAKE) -f rst_pkg/CMakeFiles/goals.dir/build.make rst_pkg/CMakeFiles/goals.dir/build
+.PHONY : goals/fast
+
+#=============================================================================
+# Target rules for targets named odom2
+
+# Build rule for target.
+odom2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odom2
+.PHONY : odom2
+
+# fast build rule for target.
+odom2/fast:
+	$(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/build
+.PHONY : odom2/fast
+
+#=============================================================================
 # Target rules for targets named imu
 
 # Build rule for target.
@@ -3273,19 +3286,6 @@ test_move: cmake_check_build_system
 test_move/fast:
 	$(MAKE) -f rst_pkg/CMakeFiles/test_move.dir/build.make rst_pkg/CMakeFiles/test_move.dir/build
 .PHONY : test_move/fast
-
-#=============================================================================
-# Target rules for targets named odom2
-
-# Build rule for target.
-odom2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 odom2
-.PHONY : odom2
-
-# fast build rule for target.
-odom2/fast:
-	$(MAKE) -f rst_pkg/CMakeFiles/odom2.dir/build.make rst_pkg/CMakeFiles/odom2.dir/build
-.PHONY : odom2/fast
 
 #=============================================================================
 # Target rules for targets named witmotion_ros_node
@@ -3859,12 +3859,12 @@ help:
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... move_base_gencfg"
 	@echo "... get_location"
-	@echo "... test_code"
 	@echo "... use_location"
 	@echo "... odom"
+	@echo "... goals"
+	@echo "... odom2"
 	@echo "... imu"
 	@echo "... test_move"
-	@echo "... odom2"
 	@echo "... witmotion_ros_node"
 	@echo "... witmotion_ros"
 	@echo "... witmotion_ros_node_autogen"

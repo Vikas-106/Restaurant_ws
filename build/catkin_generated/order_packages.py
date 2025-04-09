@@ -2,4 +2,4 @@
 source_root_dir = '/home/vikas/Restaurant_ws/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/home/vikas/Restaurant_ws/devel;/opt/ros/noetic'.split(';') if '/home/vikas/Restaurant_ws/devel;/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/vikas/Downloads/witmotion_catkin/wit_catkin/devel;/opt/ros/noetic'.split(';') if '/home/vikas/Downloads/witmotion_catkin/wit_catkin/devel;/opt/ros/noetic' != '' else []

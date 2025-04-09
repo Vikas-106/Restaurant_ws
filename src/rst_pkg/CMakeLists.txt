@@ -70,8 +70,8 @@ include_directories(
  add_executable(use_location src/use_location.cpp)
  target_link_libraries(use_location ${catkin_LIBRARIES})
 
- add_executable(test_code src/test_code.cpp)
- target_link_libraries(test_code ${catkin_LIBRARIES})
+ add_executable(goals src/mark_goals.cpp)
+ target_link_libraries(goals ${catkin_LIBRARIES})
 
  add_executable(odom src/odomentry.cpp)
  target_link_libraries(odom ${catkin_LIBRARIES})
