@@ -9,6 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/vikas/Restaurant_ws/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/vikas/Restaurant_ws/devel/lib:$LD_LIBRARY_PATH"
+export PATH='/opt/ros/noetic/bin:/home/vikas/.nvm/versions/node/v18.20.8/bin:/tools/Xilinx/Vivado/2023.2/bin:/usr/local/MATLAB/R2024a/bin:/home/vikas/.cargo/bin:/home/vikas/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/vikas/intelFPGA/20.1/modelsim_ase/bin'
 export PKG_CONFIG_PATH="/home/vikas/Restaurant_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/vikas/Restaurant_ws/build'
 export PYTHONPATH="/home/vikas/Restaurant_ws/devel/lib/python3/dist-packages:$PYTHONPATH"

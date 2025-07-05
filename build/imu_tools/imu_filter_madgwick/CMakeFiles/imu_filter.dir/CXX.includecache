@@ -72,12 +72,6 @@ imu_filter_madgwick/world_frame.h
 
 /home/vikas/Restaurant_ws/src/imu_tools/imu_filter_madgwick/include/imu_filter_madgwick/world_frame.h
 
-/home/vikas/Restaurant_ws/src/imu_tools/imu_filter_madgwick/src/imu_filter.cpp
-cmath
--
-imu_filter_madgwick/imu_filter.h
-/home/vikas/Restaurant_ws/src/imu_tools/imu_filter_madgwick/src/imu_filter_madgwick/imu_filter.h
-
 /home/vikas/Restaurant_ws/src/imu_tools/imu_filter_madgwick/src/imu_filter_ros.cpp
 imu_filter_madgwick/imu_filter_ros.h
 /home/vikas/Restaurant_ws/src/imu_tools/imu_filter_madgwick/src/imu_filter_madgwick/imu_filter_ros.h

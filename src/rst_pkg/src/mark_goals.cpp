@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
         {0.82 , 3.0},  // Cell 1
         {2.96 , 1.01},  // Cell 2
         {2.46 , -2.09},  // Cell 3
-        {0.29 , -5.35}   // Cell 4
+        {-0.1539 , -5.0}   // Cell 4
     };
 
     ros::Rate loop_rate(10);  // Publish markers at 10 Hz

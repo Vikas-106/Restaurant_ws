@@ -43,7 +43,7 @@ pluginlib/class_list_macros.h
 -
 
 /opt/ros/noetic/include/class_loader/class_loader.hpp
-boost/bind.hpp
+boost/bind/bind.hpp
 -
 boost/shared_ptr.hpp
 -

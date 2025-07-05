@@ -5,7 +5,7 @@
   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_base_laser" args="0.0 0.0 0.18 0 0 0 base_link base_laser" />
 
   <!-- Map server -->
-  <arg name="map_file" default="$(find my_movebase)newarena.yaml"/>
+  <arg name="map_file" default="$(find my_movebase)hlab.yaml"/>
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_movebase)/auto_nav.rviz" required="true" />   
@@ -24,8 +24,7 @@
     <rosparam file="$(find my_movebase)/param/dwa_local_planner_params.yaml" command="load" />
     
     <!-- Use DWA local planner -->
-    <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
     
   </node>
 </launch>
-

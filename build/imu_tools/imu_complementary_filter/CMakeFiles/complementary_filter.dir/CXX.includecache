@@ -30,16 +30,6 @@ tf/transform_broadcaster.h
 imu_complementary_filter/complementary_filter.h
 /home/vikas/Restaurant_ws/src/imu_tools/imu_complementary_filter/include/imu_complementary_filter/imu_complementary_filter/complementary_filter.h
 
-/home/vikas/Restaurant_ws/src/imu_tools/imu_complementary_filter/src/complementary_filter.cpp
-imu_complementary_filter/complementary_filter.h
-/home/vikas/Restaurant_ws/src/imu_tools/imu_complementary_filter/src/imu_complementary_filter/complementary_filter.h
-cstdio
--
-cmath
--
-iostream
--
-
 /home/vikas/Restaurant_ws/src/imu_tools/imu_complementary_filter/src/complementary_filter_ros.cpp
 imu_complementary_filter/complementary_filter_ros.h
 /home/vikas/Restaurant_ws/src/imu_tools/imu_complementary_filter/src/imu_complementary_filter/complementary_filter_ros.h

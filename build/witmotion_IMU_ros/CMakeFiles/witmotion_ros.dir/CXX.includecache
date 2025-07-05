@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/vikas/Restaurant_ws/build/witmotion_IMU_ros/include/moc_witmotion_ros.cpp
+../../../src/witmotion_IMU_ros/include/witmotion_ros.h
+/home/vikas/Restaurant_ws/src/witmotion_IMU_ros/include/witmotion_ros.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
 /home/vikas/Restaurant_ws/src/witmotion_IMU_ros/include/witmotion_ros.h
 QFile
 -
